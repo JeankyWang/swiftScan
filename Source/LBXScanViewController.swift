@@ -19,6 +19,8 @@ open class LBXScanViewController: UIViewController, UIImagePickerControllerDeleg
     
    open var qRScanView: LBXScanView?
     
+    open var finishBlock: ((_ result: String) -> Void)?
+    
     //启动区域识别功能
    open var isOpenInterestRect = false
     
@@ -127,12 +129,15 @@ open class LBXScanViewController: UIViewController, UIImagePickerControllerDeleg
     {
         for result:LBXScanResult in arrayResult
         {
-            print("%@",result.strScanned)
+            print(result.strScanned as Any)
         }
         
         let result:LBXScanResult = arrayResult[0]
-        
-        showMsg(title: result.strBarCodeType, message: result.strScanned)
+        if let scanString = result.strScanned {
+            finishBlock?(scanString)
+        } else {
+            showMsg(title: result.strBarCodeType, message: result.strScanned)
+        }
     }
     
     override open func viewWillDisappear(_ animated: Bool) {
