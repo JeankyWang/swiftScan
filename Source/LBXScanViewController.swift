@@ -135,7 +135,7 @@ open class LBXScanViewController: UIViewController, UIImagePickerControllerDeleg
         let result:LBXScanResult = arrayResult[0]
         if let scanString = result.strScanned {
             finishBlock?(scanString, result.imgScanned)
-            navigationController?.popViewController(animated: true)
+            self.dismiss(animated: true, completion: nil)
         } else {
             showMsg(title: result.strBarCodeType, message: result.strScanned)
         }
