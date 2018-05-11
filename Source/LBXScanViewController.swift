@@ -65,7 +65,7 @@ open class LBXScanViewController: UIViewController, UIImagePickerControllerDeleg
     {
         if(!LBXPermissions .isGetCameraPermission())
         {
-            showMsg(title: "提示", message: "没有相机权限，请到设置->隐私中开启本程序相机权限")
+            showMsg(title: nil, message: "没有相机权限，请到设置->隐私中开启本程序相机权限")
             return;
         }
         
