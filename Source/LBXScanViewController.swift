@@ -23,7 +23,7 @@ open class LBXScanViewController: UIViewController, UIImagePickerControllerDeleg
     
     //启动区域识别功能
    open var isOpenInterestRect = false
-    
+    let cancelBtn = UIButton(frame: CGRect(x: 15, y: 10, width: 50, height: 50))
     //识别码的类型
     var arrayCodeType:[String]?
     
@@ -32,12 +32,18 @@ open class LBXScanViewController: UIViewController, UIImagePickerControllerDeleg
 
     override open func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-        
-              // [self.view addSubview:_qRScanView];
         self.view.backgroundColor = UIColor.black
         self.edgesForExtendedLayout = UIRectEdge(rawValue: 0)
+        
+        cancelBtn.setTitle("取消", for: .normal)
+        cancelBtn.setTitleColor(.white, for: .normal)
+        cancelBtn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
+        cancelBtn.addTarget(self, action: #selector(dissmissVC), for: .touchUpInside)
+        view.addSubview(cancelBtn)
+    }
+    
+    open func dissmissVC() {
+        self.dismiss(animated: true, completion: nil)
     }
     
     open func setNeedCodeImage(needCodeImg:Bool)
@@ -115,7 +121,8 @@ open class LBXScanViewController: UIViewController, UIImagePickerControllerDeleg
         if qRScanView == nil
         {
             qRScanView = LBXScanView(frame: self.view.frame,vstyle:scanStyle! )
-            self.view.addSubview(qRScanView!)
+//            self.view.addSubview(qRScanView!)
+            view.insertSubview(qRScanView!, belowSubview: cancelBtn)
         }
         qRScanView?.deviceStartReadying(readyStr: "相机启动中...")
         
