@@ -23,7 +23,7 @@ open class LBXScanViewController: UIViewController, UIImagePickerControllerDeleg
     
     //启动区域识别功能
    open var isOpenInterestRect = false
-    let cancelBtn = UIButton(frame: CGRect(x: 15, y: 10, width: 50, height: 50))
+   open let cancelBtn = UIButton(frame: CGRect(x: 15, y: 10, width: 50, height: 50))
     //识别码的类型
     var arrayCodeType:[String]?
     
