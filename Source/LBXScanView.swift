@@ -201,7 +201,7 @@ open class LBXScanView: UIView
         }
         
         //扫码区域Y轴最小坐标
-        let YMinRetangle = self.frame.size.height / 2.0 - sizeRetangle.height/2.0 - viewStyle.centerUpOffset
+        let YMinRetangle = self.frame.size.height / 2.0 - sizeRetangle.height/2.0
         let YMaxRetangle = YMinRetangle + sizeRetangle.height
         let XRetangleRight = self.frame.size.width - XRetangleLeft
         
