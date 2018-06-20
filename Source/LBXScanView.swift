@@ -371,7 +371,7 @@ open class LBXScanView: UIView
         }
         
         //扫码区域Y轴最小坐标
-        let YMinRetangle = preView.frame.size.height / 2.0 - sizeRetangle.height/2.0 - style.centerUpOffset
+        let YMinRetangle = preView.frame.size.height / 2.0 - sizeRetangle.height/2.0
         //扫码区域坐标
         let cropRect =  CGRect(x: XRetangleLeft, y: YMinRetangle, width: sizeRetangle.width, height: sizeRetangle.height)
         
