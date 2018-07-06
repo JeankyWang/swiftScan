@@ -346,7 +346,7 @@ open class LBXScanView: UIView
         }
         
         //扫码区域Y轴最小坐标
-        let YMinRetangle = self.frame.size.height / 2.0 - sizeRetangle.height/2.0 - viewStyle.centerUpOffset
+        let YMinRetangle = self.frame.size.height / 2.0 - sizeRetangle.height/2.0// - viewStyle.centerUpOffset
         //扫码区域坐标
         let cropRect =  CGRect(x: XRetangleLeft, y: YMinRetangle, width: sizeRetangle.width, height: sizeRetangle.height)
         
@@ -439,7 +439,7 @@ open class LBXScanView: UIView
             activityView?.center = CGPoint(x: XRetangleLeft +  sizeRetangle.width/2 - 50, y: YMinRetangle + sizeRetangle.height/2)
             activityView?.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.whiteLarge
             
-            addSubview(activityView!)
+//            addSubview(activityView!)
             
             
             let labelReadyRect = CGRect(x: activityView!.frame.origin.x + activityView!.frame.size.width + 10, y: activityView!.frame.origin.y, width: 100, height: 30);
@@ -449,11 +449,11 @@ open class LBXScanView: UIView
             labelReadying?.backgroundColor = UIColor.clear
             labelReadying?.textColor = UIColor.white
             labelReadying?.font = UIFont.systemFont(ofSize: 18.0)
-            addSubview(labelReadying!)
+//            addSubview(labelReadying!)
         }
-        
-         addSubview(labelReadying!)
-         activityView?.startAnimating()
+//
+//         addSubview(labelReadying!)
+//         activityView?.startAnimating()
         
     }
     
