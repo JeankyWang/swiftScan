@@ -29,6 +29,7 @@ open class LBXScanViewController: UIViewController, UIImagePickerControllerDeleg
     
     //是否需要识别后的当前图像
     var isNeedCodeImage = false
+    open let lightBtn = UIButton(frame: CGRect(x: UIScreen.main.bounds.size.width - 65, y: 10, width: 50, height: 50))
 
     override open func viewDidLoad() {
         super.viewDidLoad()
@@ -40,10 +41,28 @@ open class LBXScanViewController: UIViewController, UIImagePickerControllerDeleg
         cancelBtn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
         cancelBtn.addTarget(self, action: #selector(dissmissVC), for: .touchUpInside)
         view.addSubview(cancelBtn)
+        
+        lightBtn.setTitle("灯光", for: .normal)
+        lightBtn.addTarget(self, action: #selector(openLight), for: .touchUpInside)
+        view.addSubview(lightBtn)
+
     }
     
     open func dissmissVC() {
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    open func openLight() {
+        do { try scanObj?.device?.lockForConfiguration()
+            if scanObj?.device?.torchMode == .off {
+                scanObj?.device?.torchMode = .on
+            } else {
+                scanObj?.device?.torchMode = .off
+            }
+            scanObj?.device?.unlockForConfiguration()
+        } catch {
+            
+        }
     }
     
     open func setNeedCodeImage(needCodeImg:Bool)
