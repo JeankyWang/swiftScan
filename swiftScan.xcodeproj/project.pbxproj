@@ -79,6 +79,7 @@
 				488928E01C1A7BE4005A8F83 /* LBXScanViewController.swift */,
 				488928E11C1A7BE4005A8F83 /* LBXScanViewStyle.swift */,
 				488928E21C1A7BE4005A8F83 /* LBXScanWrapper.swift */,
+				48B143C91C1809E700B2E7D5 /* CodeScan.bundle */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -110,7 +111,6 @@
 				73FF0B8C1CF545FE0083F169 /* MyCodeViewController.swift */,
 				73FF0B8D1CF545FE0083F169 /* QQScanViewController.swift */,
 				7DA82E081C19CE5E0028B5DB /* logo.JPG */,
-				48B143C91C1809E700B2E7D5 /* CodeScan.bundle */,
 				7D42B9AF1C05EE9A0084D045 /* AppDelegate.swift */,
 				7D42B9B11C05EE9A0084D045 /* ViewController.swift */,
 				7D42B9B31C05EE9A0084D045 /* Main.storyboard */,

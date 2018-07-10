@@ -44,6 +44,7 @@ open class LBXScanViewController: UIViewController, UIImagePickerControllerDeleg
         
         lightBtn.setTitle("灯光", for: .normal)
         lightBtn.addTarget(self, action: #selector(openLight), for: .touchUpInside)
+        lightBtn.setImage(UIImage(named: "CodeScan.bundle/qrcode_scan_btn_flash_down"), for: .normal)
         view.addSubview(lightBtn)
 
     }
@@ -160,7 +161,7 @@ open class LBXScanViewController: UIViewController, UIImagePickerControllerDeleg
         
         let result:LBXScanResult = arrayResult[0]
         if let scanString = result.strScanned {
-            if let _ = self.presentedViewController {
+            if let _ = self.presentingViewController {
                 self.dismiss(animated: true) { [weak self] in
                     self?.finishBlock?(scanString, result.imgScanned)
                 }
