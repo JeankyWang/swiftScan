@@ -42,9 +42,9 @@ open class LBXScanViewController: UIViewController, UIImagePickerControllerDeleg
         cancelBtn.addTarget(self, action: #selector(dissmissVC), for: .touchUpInside)
         view.addSubview(cancelBtn)
         
-        lightBtn.setTitle("灯光", for: .normal)
+//        lightBtn.setTitle("灯光", for: .normal)
         lightBtn.addTarget(self, action: #selector(openLight), for: .touchUpInside)
-        lightBtn.setImage(UIImage(named: "CodeScan.bundle/qrcode_scan_btn_flash_down"), for: .normal)
+//        lightBtn.setImage(UIImage(named: "CodeScan.bundle/qrcode_scan_btn_flash_down"), for: .normal)
         view.addSubview(lightBtn)
 
     }
